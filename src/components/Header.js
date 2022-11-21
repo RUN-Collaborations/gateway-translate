@@ -118,6 +118,7 @@ export default function Header({
         _entry.readOnly = true
         break
       case 'upload':
+      default:
         if (!usfmData) {
           return
         }
@@ -135,18 +136,6 @@ export default function Header({
         _entry.id = `${uploadedFilename}`
         _entry.usfmText = usfmData
         _entry.readOnly = true
-        break
-      case 'dcs':
-      default:
-        if (!owner || !repository) {
-          return
-        }
-        _entry.id = `${selectedBook.id}-${repository}-${owner}`
-        _entry.repo = repository
-        _entry.owner = owner
-        _entry.languageId = languageId
-        _entry.bookId = selectedBook.id
-        _entry.readOnly = !pushAccess
         break
     }
     _books.push(_entry)
