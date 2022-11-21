@@ -75,7 +75,6 @@ export default function Layout({ children, showChildren, title = APP_NAME }) {
     <div className='h-screen w-screen flex flex-col' ref={mainScreenRef}>
       <Header
         title={title}
-        authentication={authentication || {}}
         resetResourceLayout={() => setCurrentLayout(null)}
         feedback={feedback}
         setFeedback={setFeedback}

@@ -11,7 +11,6 @@ import AppBar from '@mui/material/AppBar'
 import Fab from '@mui/material/Fab'
 import AddIcon from '@mui/icons-material/Add'
 import Drawer from '@components/Drawer'
-import { AuthContext } from '@context/AuthContext'
 import { StoreContext } from '@context/StoreContext'
 import { AppContext } from '@context/AppContext'
 import FeedbackPopup from '@components/FeedbackPopup'
@@ -42,19 +41,14 @@ const useStyles = makeStyles(theme => ({
 export default function Header({
   title,
   resetResourceLayout,
-  authentication,
   feedback,
   setFeedback,
 }) {
-  const { user } = authentication
   const classes = useStyles()
   const router = useRouter()
   const [showModal, setShowModal] = useState(false)
 
   const [drawerOpen, setOpen] = useState(false)
-  const {
-    actions: { logout },
-  } = useContext(AuthContext)
   const {
     state: { owner },
     actions: { checkUnsavedChanges },
@@ -166,7 +160,7 @@ export default function Header({
             </Typography>
           </div>
           <>
-            {user && owner && router.pathname === '/' && (
+            {router.pathname === '/' && (
               <Fab
                 color='primary'
                 aria-label='add'
@@ -190,8 +184,6 @@ export default function Header({
         </Toolbar>
       </AppBar>
       <Drawer
-        user={user}
-        logout={logout}
         open={drawerOpen}
         onOpen={handleDrawerOpen}
         onClose={handleDrawerClose}
