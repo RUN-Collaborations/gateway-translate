@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { AuthContext } from '@context/AuthContext'
+// AUTH: import { AuthContext } from '@context/AuthContext'
 import { StoreContext } from '@context/StoreContext'
-import { RepositoryApi, OrganizationApi } from 'dcs-js'
+// AUTH: import { RepositoryApi, OrganizationApi } from 'dcs-js'
 import { decodeBase64ToUtf8 } from '@utils/base64Decode'
 import { randomLetters } from '@utils/randomLetters'
 
@@ -11,41 +11,45 @@ export const AppContext = React.createContext({})
 export default function AppContextProvider({ children }) {
   const [books, setBooks] = useState([])
   const [ltStState, setLtStState] = useState('')
-  const [refresh, setRefresh] = useState(false)
-  const [repoClient, setRepoClient] = useState(null)
-  const [organizationClient, setOrganizationClient] = useState(null)
+  const [refresh, setRefresh] = useState(true)
+  // AUTH
+  // const [repoClient, setRepoClient] = useState(null)
+  // const [organizationClient, setOrganizationClient] = useState(null)
+
   // const [ep, /*setEp*/] = useState(new EpiteletePerfHtml({
   //   proskomma: null, docSetId: "unfoldingWord/en_ltst", options: { historySize: 100 }
   // }))
   // const [ep, setEp] = useState({})
 
-  const {
-    state: { authentication },
-  } = useContext(AuthContext)
+  // AUTH
+  // const {
+  //   state: { authentication },
+  // } = useContext(AuthContext)
 
   const {
     state: { owner, server, languageId },
     actions: { setCurrentLayout },
   } = useContext(StoreContext)
 
-  const getApiConfig = ({
-    token,
-    basePath = 'https://qa.door43.org/api/v1/',
-  }) => ({
-    apiKey: token && (key => (key === 'Authorization' ? `token ${token}` : '')),
-    basePath: basePath?.replace(/\/+$/, ''),
-  })
+  // AUTH
+  // const getApiConfig = ({
+  //   token,
+  //   basePath = 'https://qa.door43.org/api/v1/',
+  // }) => ({
+  //   apiKey: token && (key => (key === 'Authorization' ? `token ${token}` : '')),
+  //   basePath: basePath?.replace(/\/+$/, ''),
+  // })
 
-  useEffect(() => {
-    if (authentication && authentication?.token) {
-      const _configuration = getApiConfig({
-        token: authentication.token.sha1,
-        basePath: `${server}/api/v1/`,
-      })
-      setRepoClient(new RepositoryApi(_configuration))
-      setOrganizationClient(new OrganizationApi(_configuration))
-    }
-  }, [authentication, server])
+  // useEffect(() => {
+  //   if (authentication && authentication?.token) {
+  //     const _configuration = getApiConfig({
+  //       token: authentication.token.sha1,
+  //       basePath: `${server}/api/v1/`,
+  //     })
+  //     setRepoClient(new RepositoryApi(_configuration))
+  //     setOrganizationClient(new OrganizationApi(_configuration))
+  //   }
+  // }, [authentication, server])
 
   const _setBooks = value => {
     setBooks(value)
@@ -128,18 +132,18 @@ export default function AppContextProvider({ children }) {
       console.log('setBooks():', _books)
       setRefresh(false)
     }
-    if (refresh && authentication && owner && server && languageId) {
+    if (refresh) {
       getContent().catch(console.error)
     }
   }, [
-    authentication,
+    // AUTH: authentication,
     owner,
     server,
     languageId,
     refresh,
     books,
     setBooks,
-    repoClient,
+    // AUTH: repoClient,
   ])
 
   // create the value for the context provider
@@ -147,8 +151,8 @@ export default function AppContextProvider({ children }) {
     state: {
       books,
       ltStState,
-      repoClient,
-      organizationClient,
+      // AUTH - repoClient,
+      // AUTH - organizationClient,
     },
     actions: {
       setBooks: _setBooks,
