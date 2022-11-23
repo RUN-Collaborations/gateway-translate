@@ -27,10 +27,6 @@ export default function StoreContextProvider(props) {
   const [lastError, setLastError] = useState(null)
   const [owner, setOwner] = useUserLocalStorage('owner', '')
   const [languageId, setLanguageId] = useUserLocalStorage('languageId', '')
-  const [showAccountSetup, setShowAccountSetup] = useLocalStorage(
-    'showAccountSetup',
-    true
-  )
   const [taArticle, setTaArticle] = useState(null)
   const [selectedQuote, setQuote] = useUserLocalStorage('selectedQuote', null)
   // TODO blm: for now we use unfoldingWord for original language bibles
@@ -89,7 +85,6 @@ export default function StoreContextProvider(props) {
 
   const value = {
     state: {
-      showAccountSetup,
       scriptureOwner,
       bibleReference,
       selectedQuote,
@@ -113,7 +108,6 @@ export default function StoreContextProvider(props) {
     actions: {
       logout,
       onReferenceChange,
-      setShowAccountSetup,
       setScriptureOwner,
       setLanguageId,
       setAppRef,

@@ -23,7 +23,6 @@ import Card from 'translation-helps-rcl/dist/components/Card'
 
 import { bookSelectList } from '@common/BooksOfTheBible'
 import { StoreContext } from '@context/StoreContext'
-import { AuthContext } from '@context/AuthContext'
 import { AppContext } from '@context/AppContext'
 
 const bibleSubjects = [
@@ -37,9 +36,6 @@ export default function SelectBookPopup({ onNext, showModal, setShowModal }) {
   const {
     state: { owner: organization },
   } = useContext(StoreContext)
-  const {
-    state: { authentication },
-  } = useContext(AuthContext)
 
   const {
     state: { repoClient, organizationClient },
@@ -54,7 +50,6 @@ export default function SelectBookPopup({ onNext, showModal, setShowModal }) {
   const [selectedOrganization, setSelectedOrganization] = useState(
     organization || ''
   )
-  const [showAll, setShowAll] = useState(false)
   const [uploadedFilename, setUploadedFilename] = useState(null)
   const [usfmData, setUsfmData] = useState(null)
   const [languageId, setLanguageId] = useState(null)
@@ -120,39 +115,6 @@ export default function SelectBookPopup({ onNext, showModal, setShowModal }) {
     setAvailableBooks(repository.books)
     setPushAccess(repository?.permissions?.push)
   }
-
-  useEffect(() => {
-    async function getOrgs() {
-      let response
-      setLoading(true)
-
-      if (!showAll && authentication) {
-        response = await organizationClient.orgListUserOrgs({
-          username: authentication.user.login,
-        })
-      } else {
-        response = await organizationClient.orgGetAll()
-      }
-
-      if (response.status === 200) {
-        setOrganizations(
-          response.data
-            .filter(
-              org =>
-                org.repo_subjects &&
-                org.repo_subjects.some(subject =>
-                  bibleSubjects.includes(subject)
-                )
-            )
-            .map(org => org.username)
-        )
-      }
-      setLoading(false)
-    }
-    if (organizationClient) {
-      getOrgs().catch(console.error)
-    }
-  }, [authentication, showAll, organizationClient])
 
   const handleFileUpload = e => {
     if (!e.target.files) {

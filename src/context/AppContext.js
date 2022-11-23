@@ -11,7 +11,7 @@ export const AppContext = React.createContext({})
 export default function AppContextProvider({ children }) {
   const [books, setBooks] = useState([])
   const [ltStState, setLtStState] = useState('')
-  const [refresh, setRefresh] = useState(true)
+  const [refresh, setRefresh] = useState(false)
   const [repoClient, setRepoClient] = useState(null)
   const [organizationClient, setOrganizationClient] = useState(null)
   // const [ep, /*setEp*/] = useState(new EpiteletePerfHtml({
