@@ -1,27 +1,16 @@
 import React, { createContext, useContext, useState } from 'react'
 import PropTypes from 'prop-types'
 import useLocalStorage from '@hooks/useLocalStorage'
-import * as useULS from '@hooks/useUserLocalStorage'
+import useUserLocalStorage from '@hooks/useUserLocalStorage'
 import { AuthContext } from '@context/AuthContext'
 import useSaveChangesPrompt from '@hooks/useSaveChangesPrompt'
 
 export const StoreContext = createContext({})
 export default function StoreContextProvider(props) {
   const {
-    state: { authentication, networkError: tokenNetworkError, server },
-    actions: { logout, setNetworkError: setTokenNetworkError, setServer },
+    state: { networkError: tokenNetworkError, server },
+    actions: { setNetworkError: setTokenNetworkError, setServer },
   } = useContext(AuthContext)
-  const username = authentication?.user?.username || ''
-
-  /**
-   * wrapper for useULS.useUserLocalStorage that applies current username
-   * @param {string} key
-   * @param {any} initialValue
-   * @return {any[]}
-   */
-  function useUserLocalStorage(key, initialValue) {
-    return useULS.useUserLocalStorage(username, key, initialValue)
-  }
 
   const [mainScreenRef, setMainScreenRef] = useState(null)
   const [lastError, setLastError] = useState(null)
@@ -96,8 +85,8 @@ export default function StoreContextProvider(props) {
       supportedBibles,
       currentLayout,
       useUserLocalStorage,
-      loggedInUser: username,
-      authentication,
+      // AUTH: authentication,
+      // AUTH: loggedInUser: username,
       lastError,
       tokenNetworkError,
       greekRepoUrl,
@@ -106,7 +95,7 @@ export default function StoreContextProvider(props) {
       savedChanges,
     },
     actions: {
-      logout,
+      // AUTH: logout,
       onReferenceChange,
       setScriptureOwner,
       setLanguageId,
@@ -136,3 +125,16 @@ export default function StoreContextProvider(props) {
 }
 
 StoreContextProvider.propTypes = { children: PropTypes.object }
+
+/*
+ * AUTH CODE GRAVEYARD
+    const {
+      state: { authentication, networkError: tokenNetworkError, server },
+      actions: { logout, setNetworkError: setTokenNetworkError, setServer },
+    } = useContext(AuthContext)
+    const username = authentication?.user?.username || ''
+
+    function useUserLocalStorage(key, initialValue) {
+      return useULS.useUserLocalStorage(username, key, initialValue)
+    }
+ */

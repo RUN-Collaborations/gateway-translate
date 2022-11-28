@@ -12,44 +12,11 @@ export default function AppContextProvider({ children }) {
   const [books, setBooks] = useState([])
   const [ltStState, setLtStState] = useState('')
   const [refresh, setRefresh] = useState(true)
-  // AUTH
-  // const [repoClient, setRepoClient] = useState(null)
-  // const [organizationClient, setOrganizationClient] = useState(null)
-
-  // const [ep, /*setEp*/] = useState(new EpiteletePerfHtml({
-  //   proskomma: null, docSetId: "unfoldingWord/en_ltst", options: { historySize: 100 }
-  // }))
-  // const [ep, setEp] = useState({})
-
-  // AUTH
-  // const {
-  //   state: { authentication },
-  // } = useContext(AuthContext)
 
   const {
     state: { owner, server, languageId },
     actions: { setCurrentLayout },
   } = useContext(StoreContext)
-
-  // AUTH
-  // const getApiConfig = ({
-  //   token,
-  //   basePath = 'https://qa.door43.org/api/v1/',
-  // }) => ({
-  //   apiKey: token && (key => (key === 'Authorization' ? `token ${token}` : '')),
-  //   basePath: basePath?.replace(/\/+$/, ''),
-  // })
-
-  // useEffect(() => {
-  //   if (authentication && authentication?.token) {
-  //     const _configuration = getApiConfig({
-  //       token: authentication.token.sha1,
-  //       basePath: `${server}/api/v1/`,
-  //     })
-  //     setRepoClient(new RepositoryApi(_configuration))
-  //     setOrganizationClient(new OrganizationApi(_configuration))
-  //   }
-  // }, [authentication, server])
 
   const _setBooks = value => {
     setBooks(value)
@@ -170,3 +137,33 @@ AppContextProvider.propTypes = {
     PropTypes.node,
   ]).isRequired,
 }
+
+/**
+ * AUTH CODE GRAVEYARD
+ *
+ *  const getApiConfig = ({
+      token,
+      basePath = 'https://qa.door43.org/api/v1/',
+    }) => ({
+      apiKey: token && (key => (key === 'Authorization' ? `token ${token}` : '')),
+      basePath: basePath?.replace(/\/+$/, ''),
+    })
+
+    useEffect(() => {
+      if (authentication && authentication?.token) {
+        const _configuration = getApiConfig({
+          token: authentication.token.sha1,
+          basePath: `${server}/api/v1/`,
+        })
+        setRepoClient(new RepositoryApi(_configuration))
+        setOrganizationClient(new OrganizationApi(_configuration))
+      }
+    }, [authentication, server])
+
+    const [repoClient, setRepoClient] = useState(null)
+    const [organizationClient, setOrganizationClient] = useState(null)
+
+    const {
+      state: { authentication },
+    } = useContext(AuthContext)
+ */
