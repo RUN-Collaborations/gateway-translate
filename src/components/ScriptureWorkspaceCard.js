@@ -55,12 +55,12 @@ export default function ScriptureWorkspaceCard({
     bookId,
   ])
 
-  const editorProps = {
-    onSave: (bookCode, usfmText) => setDoSave(usfmText),
-    docSetId,
-    // usfmText: data.usfmText,
-    bookId: data.bookId,
-  }
+  // const editorProps = {
+  //   onSave: (bookCode,usfmText) => setDoSave(usfmText),
+  //   docSetId,
+  //   // usfmText: data.usfmText,
+  //   bookId: data.bookId,
+  // }
 
   let title = ''
   if (BIBLE_AND_OBS[bookId.toLowerCase()]) {
@@ -84,15 +84,16 @@ export default function ScriptureWorkspaceCard({
     >
       {
         // ep[docSetId]?.localBookCodes().includes(bookId.toUpperCase())
-        data.usfmText ? (
-          <div className='text-sm max-w-prose'>
-            <UsfmEditor
-              key='1'
-              bookId={data.bookId}
-              docSetId={docSetId}
-              usfmText={data.usfmText}
-              onSave={(bookCode, usfmText) => setDoSave(usfmText)}
-            />
+        data.usfmText
+        ?
+          <div className="text-sm max-w-prose">
+          <UsfmEditor key="1"
+            bookId={data.bookId}
+            docSetId={docSetId}
+            usfmText={data.usfmText}
+            onSave={ (bookCode,usfmText) => setDoSave(usfmText) }
+            editable={id.endsWith(owner) ? true : false}
+          />
           </div>
         ) : typeof data.content === 'string' ? (
           <div>
