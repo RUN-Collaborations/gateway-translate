@@ -16,6 +16,7 @@ import { StoreContext } from '@context/StoreContext'
 import { AppContext } from '@context/AppContext'
 import FeedbackPopup from '@components/FeedbackPopup'
 import SelectBookPopup from './SelectBookPopup/SelectBookPopup'
+import BibleReference from './BibleReference'
 
 const useStyles = makeStyles(theme => ({
   root: { flexGrow: 1 },

@@ -1,6 +1,9 @@
 {
-  "name": "gateway-translate",
-  "version": "0.0.18",
+  "name": "translate-align-2414",
+  "version": "0.1.0",
+  "engines": {
+    "node": "16"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build --debug",
@@ -26,6 +29,7 @@
     "core-js": "^3.22.8",
     "dcs-js": "^1.4.1",
     "deep-equal": "^2.0.5",
+    "localforage": "^1.10.0",
     "next": "^12.0.x",
     "postcss": "^8.4.14",
     "react": "^18.2.0",
@@ -37,10 +41,15 @@
     "translation-helps-rcl": "^3.3.4-rc.3",
     "use-deep-compare-effect": "^1.8.1",
     "utf8": "3.0.0",
-    "uw-editor": "0.1.15",
+    "uw-editor": "0.1.23",
     "zip-project": "0.0.27"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@babel/plugin-syntax-logical-assignment-operators": "^7.10.4",
+    "@netlify/plugin-nextjs": "3.9.2",
     "eslint": "^8.17.0",
     "eslint-config-next": "12.1.6",
     "husky": "^8.0.1",
