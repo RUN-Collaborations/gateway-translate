@@ -22,12 +22,6 @@ export default function ScriptureWorkspaceCard({
 
   const {
     state: {
-      authentication,
-    },
-  } = useContext(AuthContext)
-
-  const {
-    state: {
       owner,
       bibleReference,
     },

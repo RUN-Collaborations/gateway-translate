@@ -179,22 +179,14 @@ function ScriptureWorkspace() {
     }
   }
 
-  useEffect(() => {
-    setWorkspaceReady(false)
-
-    if (owner && languageId && appRef && server && loggedInUser) {
-      // clearCaches()
-      setWorkspaceReady(true)
-    } // eslint-disable-next-line
-  }, [owner, languageId, appRef, server, loggedInUser])
 
   const config = {
     server,
     ...HTTP_CONFIG,
   }
 
-  return tokenNetworkError || networkError || !workspaceReady ? (
-    // Do not render workspace until user logged in and we have user settings
+  return tokenNetworkError || networkError  ? (
+    // ALWAYS render workspace
     <>
       {showNetworkError()}
       <CircularProgress size={180} />
@@ -272,7 +264,7 @@ function ScriptureWorkspace() {
           [20, 20],
         ]}
       >
-        {books.map(data => (
+        {books.filter(data => data.bookId.toLowerCase() === bibleReference.bookId).map(data => (
           <ScriptureWorkspaceCard
             key={data.id}
             id={data.id}
