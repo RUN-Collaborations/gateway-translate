@@ -75,7 +75,7 @@ const CreateProjectForm = ({ onCreate = () => null }) => {
     />
   )
 
- const TOKEN_ID = 'translateAlign2414ConceptApp'
+ const TOKEN_ID = 'gatewayTranslate'
   
   return (
     <>
