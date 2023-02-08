@@ -12485,9 +12485,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"translate-align-2414@workspace:.":
+"translate-align-2414-concept-app@workspace:.":
   version: 0.0.0-use.local
-  resolution: "translate-align-2414@workspace:."
+  resolution: "translate-align-2414-concept-app@workspace:."
   dependencies:
     "@babel/plugin-proposal-nullish-coalescing-operator": ^7.12.1
     "@babel/plugin-proposal-object-rest-spread": ^7.12.1
