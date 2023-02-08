@@ -75,6 +75,8 @@ const CreateProjectForm = ({ onCreate = () => null }) => {
     />
   )
 
+ const TOKEN_ID = 'translateAlign2414ConceptApp'
+  
   return (
     <>
       <SettingsForm icon={LibraryAddIcon} label={'Create Project'}>
