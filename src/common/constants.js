@@ -1,7 +1,7 @@
 import packagefile from '../../package.json'
 
 export const APP_VERSION = packagefile.version
-export const APP_NAME = 'gatewayTranslate'
+export const APP_NAME = 'Translate-Align 2414 Concept App'
 export const BASE_URL = 'https://git.door43.org'
 export const QA_BASE_URL = 'https://qa.door43.org'
 export const QA = 'QA'
