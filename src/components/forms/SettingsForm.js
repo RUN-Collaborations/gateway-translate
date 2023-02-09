@@ -6,7 +6,7 @@ import FormHelperText from '@mui/material/FormHelperText'
 // import TOKEN_ID from '@common/constants'
 import Typography from '@mui/material/Typography'
 
-const TOKEN_ID = 'translateAlign2414'
+const TOKEN_ID = 'gatewayTranslate'
 
 const SettingsForm = ({
   children,
