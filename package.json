@@ -1,6 +1,9 @@
 {
   "name": "translate-align-2414",
   "version": "0.1.0",
+  "engines": {
+    "node": "15"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build --debug",
