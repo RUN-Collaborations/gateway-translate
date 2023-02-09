@@ -41,11 +41,9 @@
     <a href="https://github.com/unfoldingword/gateway-translate"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://gateway-translate.netlify.app/">Go to Application</a>
+    <a href="https://gateway-translate.netlify.app/">Go to this forked Translate-Align-2414-Concept App</a>
     ·
-    <a href="https://github.com/unfoldingword/gateway-translate/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/unfoldingword/gateway-translate/issues">Request Feature</a>
+    <a href="https://gateway-translate.netlify.app/">Go to the upstream application -- gatewayTranslate</a>
   </p>
 </div>
 
