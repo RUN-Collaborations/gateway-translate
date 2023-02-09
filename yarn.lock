@@ -3568,16 +3568,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:4.1.0":
-  version: 4.1.0
-  resolution: "chalk@npm:4.1.0"
-  dependencies:
-    ansi-styles: ^4.1.0
-    supports-color: ^7.1.0
-  checksum: 5561c7b4c063badee3e16d04bce50bd033e1be1bf4c6948639275683ffa7a1993c44639b43c22b1c505f0f813a24b1889037eb182546b48946f9fe7cdd0e7d13
-  languageName: node
-  linkType: hard
-
 "chalk@npm:^2.0.0, chalk@npm:^2.0.1, chalk@npm:^2.3.2":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
@@ -6062,7 +6052,7 @@ __metadata:
     autoprefixer: ^10.4.7
     base-64: ^1.0.0
     bible-reference-rcl: ^1.1.0
-    chalk: 4.1.0
+    chalk: ^4.1.0
     core-js: ^3.22.8
     dcs-js: ^1.4.1
     deep-equal: ^2.0.5

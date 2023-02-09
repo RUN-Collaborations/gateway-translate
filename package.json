@@ -26,7 +26,7 @@
     "autoprefixer": "^10.4.7",
     "base-64": "^1.0.0",
     "bible-reference-rcl": "^1.1.0",
-    "chalk": "4.1.0",
+    "chalk": "^4.1.0",
     "core-js": "^3.22.8",
     "dcs-js": "^1.4.1",
     "deep-equal": "^2.0.5",
