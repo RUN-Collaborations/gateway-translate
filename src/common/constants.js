@@ -1,12 +1,12 @@
 import packagefile from '../../package.json'
 
 export const APP_VERSION = packagefile.version
-export const APP_NAME = 'gatewayTranslate'
+export const APP_NAME = 'translateAlign2414'
 export const BASE_URL = 'https://git.door43.org'
 export const QA_BASE_URL = 'https://qa.door43.org'
 export const QA = 'QA'
 export const PROD = 'PROD'
-export const TOKEN_ID = 'gateway-translate'
+export const TOKEN_ID = 'translateAlign2414'
 export const FEEDBACK_PAGE = '/feedback'
 export const SERVER_KEY = 'server'
 export const PASSWORD_RECOVERY_LINK = `https://git.door43.org/user/forgot_password`

@@ -6031,52 +6031,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gateway-translate@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "gateway-translate@workspace:."
-  dependencies:
-    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.12.1
-    "@babel/plugin-proposal-object-rest-spread": ^7.12.1
-    "@babel/plugin-proposal-optional-chaining": ^7.12.7
-    "@babel/plugin-syntax-logical-assignment-operators": ^7.10.4
-    "@emotion/is-prop-valid": ^1.2.0
-    "@emotion/react": ^11.10.4
-    "@emotion/styled": ^11.10.4
-    "@material-ui/lab": 4.0.0-alpha.61
-    "@mui/icons-material": ^5.10.6
-    "@mui/lab": ^5.0.0-alpha.107
-    "@mui/material": ^5.10.6
-    "@mui/styles": 5.10.10
-    "@netlify/plugin-nextjs": ^4.30.3
-    "@sendgrid/mail": ^7.7.0
-    autoprefixer: ^10.4.7
-    base-64: ^1.0.0
-    bible-reference-rcl: ^1.1.0
-    core-js: ^3.22.8
-    dcs-js: ^1.4.1
-    deep-equal: ^2.0.5
-    eslint: ^8.17.0
-    eslint-config-next: 12.1.6
-    husky: ^8.0.1
-    localforage: ^1.10.0
-    next: ^12.0.x
-    postcss: ^8.4.14
-    prettier: ^2.6.2
-    prop-types: ^15.8.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    regenerator-runtime: ^0.13.9
-    resource-workspace-rcl: ^2.1.1
-    scripture-resources-rcl: ^5.2.1
-    tailwindcss: ^3.1.2
-    translation-helps-rcl: ^3.3.4-rc.3
-    use-deep-compare-effect: ^1.8.1
-    utf8: 3.0.0
-    uw-editor: 0.1.23
-    zip-project: 0.0.27
-  languageName: unknown
-  linkType: soft
-
 "gauge@npm:^4.0.3":
   version: 4.0.4
   resolution: "gauge@npm:4.0.4"
@@ -12979,6 +12933,52 @@ __metadata:
   checksum: 79058d8868d61bc011d3e17316e4b51af71069e7239f9469e34c5358965bb5080c2ca23ba0c930dbb1e3d4bf3dd13ad8a961c6b7532dff0f05a2e32e98790fff
   languageName: node
   linkType: hard
+
+"translate-align-2414@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "translate-align-2414@workspace:."
+  dependencies:
+    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.12.1
+    "@babel/plugin-proposal-object-rest-spread": ^7.12.1
+    "@babel/plugin-proposal-optional-chaining": ^7.12.7
+    "@babel/plugin-syntax-logical-assignment-operators": ^7.10.4
+    "@emotion/is-prop-valid": ^1.2.0
+    "@emotion/react": ^11.10.4
+    "@emotion/styled": ^11.10.4
+    "@material-ui/lab": 4.0.0-alpha.61
+    "@mui/icons-material": ^5.10.6
+    "@mui/lab": ^5.0.0-alpha.107
+    "@mui/material": ^5.10.6
+    "@mui/styles": 5.10.10
+    "@netlify/plugin-nextjs": ^4.30.3
+    "@sendgrid/mail": ^7.7.0
+    autoprefixer: ^10.4.7
+    base-64: ^1.0.0
+    bible-reference-rcl: ^1.1.0
+    core-js: ^3.22.8
+    dcs-js: ^1.4.1
+    deep-equal: ^2.0.5
+    eslint: ^8.17.0
+    eslint-config-next: 12.1.6
+    husky: ^8.0.1
+    localforage: ^1.10.0
+    next: ^12.0.x
+    postcss: ^8.4.14
+    prettier: ^2.6.2
+    prop-types: ^15.8.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    regenerator-runtime: ^0.13.9
+    resource-workspace-rcl: ^2.1.1
+    scripture-resources-rcl: ^5.2.1
+    tailwindcss: ^3.1.2
+    translation-helps-rcl: ^3.3.4-rc.3
+    use-deep-compare-effect: ^1.8.1
+    utf8: 3.0.0
+    uw-editor: 0.1.23
+    zip-project: 0.0.27
+  languageName: unknown
+  linkType: soft
 
 "translation-helps-rcl@npm:^3.3.4-rc.3":
   version: 3.3.4-rc.3

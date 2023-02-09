@@ -25,8 +25,8 @@ function Home() {
       }}
     >
       <Head>
-        <title>gatewayTranslate</title>
-        <meta name='description' content='gatewayTranslate' />
+        <title>translateAlign2414</title>
+        <meta name='description' content='translateAlign2414' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <ScriptureWorkspace />
