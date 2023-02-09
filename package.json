@@ -48,7 +48,7 @@
     "@babel/plugin-syntax-logical-assignment-operators": "^7.10.4",
     "@netlify/plugin-nextjs": "^4.30.3",
     "eslint": "^8.17.0",
-    "eslint-config-next": "12.1.6",
+    "eslint-config-next": "^13.1.5",
     "husky": "^8.0.1",
     "prettier": "^2.6.2",
     "prop-types": "^15.8.1"
