@@ -41,9 +41,11 @@
     <a href="https://github.com/unfoldingword/gateway-translate"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://gateway-translate.netlify.app/">Go to this forked Translate-Align-2414-Concept App</a>
+    <a href="https://gateway-translate.netlify.app/">Go to Application</a>
     ·
-    <a href="https://gateway-translate.netlify.app/">Go to the upstream application -- gatewayTranslate</a>
+    <a href="https://github.com/unfoldingword/gateway-translate/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/unfoldingword/gateway-translate/issues">Request Feature</a>
   </p>
 </div>
 
@@ -224,4 +226,3 @@ Project Link: [https://github.com/unfoldingword/gateway-translate](https://githu
 [license-url]: https://github.com/unfoldingword/gateway-translate/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/company/unfoldingword
-
