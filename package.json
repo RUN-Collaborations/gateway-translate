@@ -3,6 +3,9 @@
   "version": "0.0.18",
   "homepage": "./",
   "main": "./public/electron.js",
+  "engines": {
+    "node": "16"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build --debug",
