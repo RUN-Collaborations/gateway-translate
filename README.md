@@ -1,13 +1,12 @@
 <div id="top"></div>
 
+<div align="center">
 [Contributors](https://github.com/RUN-Collaborations/gateway-translate/graphs/contributors)
     ·
 [Original Upstream App, of which this is a Fork](https://github.com/unfoldingWord/gateway-translate)
     ·
 [MIT License](https://github.com/RUN-Collaborations/gateway-translate/blob/main/LICENSE)
-
 <br />
-<div align="center">
 
 <h3 align="center">Offline Fork of gatewayTranslate</h3>
 
