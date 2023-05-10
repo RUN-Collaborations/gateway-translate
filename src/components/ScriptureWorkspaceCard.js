@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext, createElement } from 'react'
+import { useEffect, useState, useContext, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { Card } from 'translation-helps-rcl'
 import { UsfmEditor } from 'uw-editor'
@@ -16,7 +16,6 @@ export default function ScriptureWorkspaceCard({
   classes,
   onSave: saveToWorkspace,
   onClose: removeBook,
-  isUnsaved,
 }) {
   const [doSave, setDoSave] = useState(false)
 
@@ -45,22 +44,6 @@ export default function ScriptureWorkspaceCard({
     state: { books, repoClient, ep },
     actions: { setBooks },
   } = useContext(AppContext)
-
-  const setUnsavedData = (value) => {
-    let _books = [...books]
-    let _count = 0
-    console.log("setUnsavedData() id:", id, value)
-    for (let i = 0; i < _books.length; i++) {
-      if (_books[ i ].id === id) {
-        _books[ i ].unsaved = value
-        setBooks(_books)
-      }
-      if ( _books[i]?.unsaved === true ) {
-        _count++
-      }
-    }
-    sessionStorage.setItem("unsavedChanges", _count);
-  }
 
   // Save Feature
   useEffect(() => {
@@ -107,7 +90,7 @@ export default function ScriptureWorkspaceCard({
   } else {
     title += ' (' + id + ')'
   }
-  console.log('owner and id:', owner, id)
+
   return (
     <Card
       title={title}
@@ -128,10 +111,10 @@ export default function ScriptureWorkspaceCard({
             usfmText={data.usfmText}
             onSave={ (bookCode,usfmText) => setDoSave(usfmText) }
             editable={id.endsWith(owner) ? true : false}
-            onUnsavedData={setUnsavedData}
-            // hasInitialUnsavedData={data.unsaved}
-            activeReference={bibleReference}
-            onReferenceSelected={onReferenceSelected}
+            // commenting out this code for v0.9
+            // see issue 152
+            // activeReference={bibleReference}
+            // onReferenceSelected={onReferenceSelected}
           />
         :
         (

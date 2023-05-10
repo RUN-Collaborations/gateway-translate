@@ -13,6 +13,7 @@ import {
   reloadApp,
 } from '@utils/network'
 import { useRouter } from 'next/router'
+import { useUnsavedDataState } from 'uw-editor'
 import { HTTP_CONFIG } from '@common/constants'
 import NetworkErrorPopup from '@components/NetworkErrorPopUp'
 import ScriptureWorkspaceCard from './ScriptureWorkspaceCard'
@@ -43,35 +44,47 @@ function ScriptureWorkspace() {
   const [showModal, setShowModal] = useState(false)
   const [idToClose, setIdToClose] = useState(null)
 
-
   const {
     state: { books },
     actions: { setBooks },
   } = useContext(AppContext)
 
+  const { hasUnsavedData } = useUnsavedDataState( ) 
+
   const onClose = id => {
     let _books = [...books]
+    const _trace = "ScriptureWorkspace.js/onClose()"
     setIdToClose(id)
     for (let i = 0; i < _books.length; i++) {
-      if (_books[ i ].id === id) {
-        if ( _books[ i ].unsaved === true ) {
+      if (_books[i].id === id) {
+        if (hasUnsavedData(_books[i].docset,_books[i].bookId)) {
           // alert("Changes are unsaved, re-open book to save")
-          console.log("book has unsaved changes:", id)
+          console.log(_trace+": book has unsaved changes:", id)
           setShowModal(true)
-        } else {
+        } else {   
+          // found the book... now process it and break
           _books[i].showCard = false
+          _books[i].trace = _trace
+          console.log(_trace+": book is unchanged:", id)
+          setBooks(_books)
         }
         break
       }
     }
-    setBooks(_books)
   }
 
   const removeBook = id => {
     let _books = [...books]
+    const _trace = "ScriptureWorkspace.js/removeBook()"
     for (let i = 0; i < _books.length; i++) {
       if (_books[i].id === id) {
+        // found the book... now process it and break
         _books[i].showCard = false;
+        _books[i].trace = _trace
+        console.log(_trace+": remove card (showCard=false",id)
+        setBooks(_books)
+        setShowModal(false)
+        setIdToClose(null)
         break
       }
     }
@@ -270,10 +283,14 @@ function ScriptureWorkspace() {
             key={data.id}
             id={data.id}
             bookId={data.bookId}
+
             docSetId={data.docset}
             data={data}
             classes={classes}
             onClose={() => onClose(data.id)}
+            // showModal={showModal}
+            // setShowModal={setShowModal}
+            // onDiscard={() => removeBook(data.id)}
           />
         ))}
       </Workspace>

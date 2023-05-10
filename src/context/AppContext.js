@@ -28,10 +28,11 @@ export default function AppContextProvider({ children }) {
   useEffect(() => {
     async function getContent() {
       let _books = books
-
+      let _changeCount = 0
       for (let i = 0; i < _books.length; i++) {
         if (!_books[i].content) {
           let _content = null
+          _changeCount++
           try {
             switch (_books[i].source) {
               case 'url':
@@ -75,10 +76,9 @@ export default function AppContextProvider({ children }) {
             _books[i].usfmText = _usfmText
 
             // extract bookId from text
-            const _regex = /^\\id ([A-Z0-9]{3})/
-            const _found = _usfmText.match(_regex)
-            const _textBookId = _found[1]
-            console.log('ID from USFM Text:', _textBookId)
+            const _regex = /^\\id ([A-Z0-9]{3})/;
+            const _found = _usfmText.match(_regex);
+            const _textBookId = _found[1];
             // if no id found, consider it invalid USFM
             if (!_textBookId) {
               _books[i].bookId = 'unknown'
@@ -93,11 +93,14 @@ export default function AppContextProvider({ children }) {
           } else {
             _books[i].usfmText = null
           }
-          books[i].showCard = true
+          _books[i].showCard = true
+          _books[i].trace = _trace
         }
       }
-      setBooks(_books)
-      console.log('setBooks():', _books)
+      if ( _changeCount > 0 ) {
+        setBooks(_books)
+        console.log('setBooks():', _books)
+      }
       setRefresh(false)
     }
     if (refresh) {
